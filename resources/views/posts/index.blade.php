@@ -61,7 +61,7 @@
                 <div class = 'posts'>
                     @foreach ($posts as $post)
                         <div class = 'post'>
-                            <h2 class = 'created_at'>{{$post->created_at }}</h2>
+                            <h2 class = 'updated_at'>{{$post->updated_at }}</h2>
                             <h2 class = 'lecture_name'>{{$post->lecture->name }}</h2>
                             <h2 class = 'program_name'>{{$post->program->name }}</h2>
                             <h2 class = 'title'>{{$post->title }}</h2>

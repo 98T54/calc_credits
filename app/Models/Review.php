@@ -20,4 +20,17 @@ class Review extends Model
     public function program(){
         return $this->belongsTo(Program::class);
     }
+    
+    protected $fillable =[
+        'body',
+        'lecture_id',
+        'user_id',
+        'program_id',
+        'handy_point',
+        'recommend_point',
+        ];
+    
+    public function getPagenateByLimit(int $limit_count=10){
+        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 }

@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('掲示板') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('review')" :active="request()->routeIs('review')">
+                        {{ __('口コミ') }}
+                    </x-nav-link>
                 </div>
             </div>
 
