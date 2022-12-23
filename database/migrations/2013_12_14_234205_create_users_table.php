@@ -16,17 +16,15 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignId('program_id')->constrained('programs');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->timestamp('created_at')->nullable();
-            //$table->timestamps();
-            //$table->softDeletes();
-            $table->softDeletes('deleted_at')->nullable();
             
-    
-            //$table->rememberToken();
-            //$table->timestamps();
+            $table->timestamps();
+            
+            $table->softDeletes()->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
         });
     }
 

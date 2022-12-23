@@ -13,12 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('class_user', function (Blueprint $table) {
-            $table->foreignId('class_id')->constrained('classes');
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->primary(['class_id', 'user_id']);
-            //$table->timestamps();
+            $table->foreignId('program_id')->constrained('programs');
+            $table->foreignId('lecture_id')->constrained('lectures');
+            $table->string('title', 50);
+            $table->text('body');
+            $table->timestamps();
+            $table->softDeletes();
         });
+        
     }
 
     /**
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_user');
+        Schema::dropIfExists('posts');
     }
 };
