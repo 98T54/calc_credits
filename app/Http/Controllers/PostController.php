@@ -12,7 +12,7 @@ class PostController extends Controller
     public function index(Post $post, Lecture $lecture){
         
         
-        return view('posts/index')->with(['lectures' => $lecture->get(), 'posts' => $post->getPagenateByLimit()]);
+        return view('posts/index')->with(['lectures' => $lecture->get(), 'posts'=> $post->getPagenateByLimit()]);
     }
     
     public function store(PostRequest $request, Post $post){
@@ -22,7 +22,7 @@ class PostController extends Controller
         
         $post->fill($input)->save();
        
-        return redirect('/');
+        return redirect('/post');
         
     }
 }

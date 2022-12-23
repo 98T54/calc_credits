@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,10 @@ use App\Http\Controllers\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PostController::class, 'index'])->name('index');
+Route::get('/post', [PostController::class, 'index'])->name('index');
 Route::post('/posts', [PostController::class, 'store']);
-
+Route::get('/review', [ReviewController::class, 'index'])->name('review');
+Route::post('/reviews', [ReviewController::class, 'store']);
 //Route::get('/', function () {
     //return view('welcome');
 //});
