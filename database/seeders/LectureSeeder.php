@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ClassSeeder extends Seeder
+class LectureSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,22 +15,22 @@ class ClassSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('classes')->insert([
+        DB::table('lectures')->insert([
             'subject_id' => 1,
             'name' => '大学・学問論',
             'credit' => 1,
             ]);
         
-        DB::table('classes')->insert([
+        DB::table('lectures')->insert([
             'subject_id' => 1,
             'name' => 'ジェンダーと教育',
             'credit' => 1,
             ]);
             
-        DB::table('classes')->insert([
+        DB::table('lectures')->insert([
             'subject_id' => 1,
             'name' => '異文化理解1',
             'credit' => 1,
-            ]);    
+            ]);   
     }
 }
